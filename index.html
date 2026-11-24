@@ -1,0 +1,126 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>限时特惠</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;font-family:system-ui,"Microsoft YaHei",sans-serif;user-select:none;background:#fff}
+body{display:flex;flex-direction:column}
+.top{height:30px;flex:none;-webkit-app-region:drag;background:#f4f4f4;color:#999;font-size:11px;display:flex;align-items:center;justify-content:space-between;padding:0 8px;border-bottom:1px solid #e3e3e3}
+.top b{background:#ffc400;color:#333;border-radius:2px;padding:1px 4px;margin-right:6px;font-size:10px}
+#x{-webkit-app-region:no-drag;cursor:pointer;color:#666;font-size:12px;padding:3px 8px;background:#e6e6e6;border-radius:3px}
+.hero{flex:none;height:76px;position:relative;overflow:hidden;background:repeating-linear-gradient(45deg,#ff2d2d 0 14px,#ff4d00 14px 28px);color:#fff;text-align:center}
+.hero h1{margin:6px 0 0;font-size:25px;font-weight:900;color:#fff700;text-shadow:2px 2px 0 #b30000,-1px -1px 0 #b30000;animation:shake .6s infinite}
+.hero p{margin:2px 0 0;font-size:13px;font-weight:700}
+.hero i{position:absolute;top:-20px;font-style:normal;animation:fall 3s linear infinite}
+@keyframes fall{to{transform:translateY(110px) rotate(360deg)}}
+@keyframes shake{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
+.stage{flex:1;min-height:120px;position:relative;background:#111;overflow:hidden}
+webview{position:absolute;inset:0;width:100%;height:100%;background:#fff}
+.ov{position:absolute;inset:0;pointer-events:none}
+.wm{background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='64'><text x='12' y='42' font-size='17' font-weight='bold' fill='%23ff3b30' fill-opacity='.16' transform='rotate(-22 50 32)'>广告 AD</text></svg>")}
+.stk{position:absolute;pointer-events:none;font-weight:900;color:#fff;text-shadow:1px 1px 0 rgba(0,0,0,.5);padding:3px 9px;border-radius:3px;font-size:13px}
+.s1{top:6px;left:-26px;transform:rotate(-35deg);background:#e60012;padding:4px 36px}
+.s2{top:8px;right:8px;background:linear-gradient(#ffb300,#ff6d00);animation:pulse 1s infinite}
+.s3{bottom:34px;right:6px;background:#ff2d55;transform:rotate(4deg)}
+.s4{bottom:36px;left:6px;background:#00b140;transform:rotate(-3deg)}
+@keyframes pulse{50%{transform:scale(1.12)}}
+.vbar{position:absolute;left:0;right:0;bottom:0;height:26px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:#fff;font-size:11px;display:flex;align-items:center;gap:8px;padding:0 8px;pointer-events:none}
+.vbar .b{pointer-events:auto;cursor:pointer;padding:5px 4px}
+.vbar .p{flex:1;height:3px;background:rgba(255,255,255,.3);border-radius:2px;overflow:hidden}
+.vbar .p span{display:block;height:100%;width:30%;background:#ff3b30;animation:prog 14s linear infinite}
+@keyframes prog{from{width:0}to{width:100%}}
+.cards{flex:none;height:92px;display:flex;gap:5px;padding:5px;background:#fff0d6}
+.card{flex:1;border-radius:6px;color:#fff;text-align:center;padding:4px 2px;position:relative;overflow:hidden;animation:pulse 1.6s infinite}
+.card em{display:block;font-size:30px;font-style:normal}
+.card span{font-size:11px;font-weight:700;display:block}
+.card s{font-size:10px;opacity:.8}
+.card b{font-size:15px;color:#fff700}
+.card:nth-child(2){animation-delay:.5s}.card:nth-child(3){animation-delay:1s}
+.code{flex:none;height:34px;display:flex;align-items:center;gap:6px;padding:0 6px;background:#fff;border-top:1px dashed #ff9500}
+.code span{font-size:12px;color:#ff3b30;font-weight:700;white-space:nowrap}
+.code input{flex:1;height:24px;border:1px solid #ffb300;border-radius:3px;padding:0 6px;font-size:12px;outline:none;background:#fffbea;color:#555}
+.cta{flex:none;height:44px;margin:4px 6px;border-radius:22px;background:linear-gradient(#ff5a36,#e60012);color:#fff;font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 #a3000c;animation:shake .5s infinite}
+.foot{flex:none;height:18px;font-size:10px;color:#aaa;text-align:center;line-height:18px}
+</style></head>
+<body>
+<div class="top"><span><b>广告</b>赞助内容 · 限时特惠</span><span id="x">5s</span></div>
+<div class="hero" id="hero"><h1>🧧震惊！新人专享¥888🧧</h1><p>0元购 · 仅限今日 · 手慢无！</p></div>
+<div class="stage">
+  <webview id="wv" webpreferences="autoplayPolicy=no-user-gesture-required" useragent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"></webview>
+  <div class="ov wm"></div>
+  <div class="stk s1">HOT</div><div class="stk s2">限时秒杀</div>
+  <div class="stk s3">立减¥50</div><div class="stk s4">包邮</div>
+  <div class="vbar"><span class="b" id="pp">▶</span><span class="b" id="pv">‹</span><div class="p"><span></span></div><span>广告 00:12</span><span class="b" id="nx">跳过 ›</span></div>
+</div>
+<div class="cards">
+  <div class="card" style="background:linear-gradient(#ff416c,#ff4b2b)"><em>📱</em><span>旗舰手机</span><s>¥5999</s> <b>¥9.9</b></div>
+  <div class="card" style="background:linear-gradient(#11998e,#38ef7d)"><em>🎧</em><span>降噪耳机</span><s>¥1299</s> <b>¥1</b></div>
+  <div class="card" style="background:linear-gradient(#8e2de2,#4a00e0)"><em>💎</em><span>钻石会员</span><s>¥299</s> <b>免费</b></div>
+</div>
+<div class="code"><span>🎁 优惠码</span><input id="u" placeholder="输入口令领取奖励…" spellcheck="false"></div>
+<div class="cta">立即领取 ›</div>
+<div class="foot">广告 · 了解详情 · 不感兴趣</div>
+<script>
+const $ = (s) => document.querySelector(s);
+const wv = $('#wv'), u = $('#u'), x = $('#x');
+// 飘落的红包
+['🧧','💰','🎁','⭐','🧨','💸'].forEach((e, i) => {
+  for (let k = 0; k < 3; k++) {
+    const el = document.createElement('i'); el.textContent = e;
+    el.style.left = (i * 16 + k * 5 + Math.random() * 6) + '%';
+    el.style.animationDelay = (-Math.random() * 3) + 's';
+    $('#hero').appendChild(el);
+  }
+});
+// 加载网址
+function go(v) {
+  v = v.trim(); if (!v) return;
+  if (!/^https?:\/\//.test(v)) v = v.includes('.') && !v.includes(' ') ? 'https://' + v : 'https://www.baidu.com/s?wd=' + encodeURIComponent(v);
+  wv.src = v;
+}
+u.addEventListener('keydown', (e) => { if (e.key === 'Enter') { go(u.value); u.blur(); wv.focus(); } });
+// 桌面版网页缩小显示（相当于更宽的视口），手机版 100%
+let mobile = false, target = 700;   // target = 桌面版网页的期望视口宽度(css px)，缩放比例 = 窗口宽度 / target
+const UA_D = wv.getAttribute('useragent');
+const UA_M = 'Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Mobile Safari/537.36';
+const stage = $('.stage');
+const applyZoom = () => {
+  const z = mobile ? 1 : Math.min(2, Math.max(0.25, stage.clientWidth / target));
+  try { wv.setZoomFactor(z); } catch (e) {}
+};
+new ResizeObserver(applyZoom).observe(stage);   // 拖动改变广告窗口大小时自动重算缩放
+wv.addEventListener('dom-ready', applyZoom);
+wv.addEventListener('did-navigate', applyZoom);
+wv.addEventListener('did-navigate-in-page', applyZoom);
+function toggleUA() { mobile = !mobile; wv.setUserAgent(mobile ? UA_M : UA_D); applyZoom(); try { wv.reload(); } catch (e) {} }
+// 把按键发给网页：下一个/上一个视频、暂停
+function key(k) {
+  wv.focus();
+  wv.sendInputEvent({ type: 'keyDown', keyCode: k });
+  wv.sendInputEvent({ type: 'keyUp', keyCode: k });
+}
+$('#nx').onclick = () => key('Down');
+$('#pv').onclick = () => key('Up');
+$('#pp').onclick = () => key('Space');
+const q = new URLSearchParams(location.search).get('url');
+if (q) go(q); else u.focus();
+// 假关闭按钮：5 秒后变成"关闭"，点击=隐藏（老板键同效果）
+let n = 5; const t = setInterval(() => { n--; if (n > 0) x.textContent = n + 's'; else { x.textContent = '关闭 ✕'; clearInterval(t); } }, 1000);
+x.onclick = () => { if (n <= 0) window.ad.hide(); };
+function ctrlKey(k) {
+  if (k === 'l') { u.focus(); u.select(); }
+  if (k === 'u') toggleUA();                                  // 切换 手机版/桌面版
+  if (k === '=' || k === '+') { target = Math.max(320, target / 1.1); applyZoom(); }
+  if (k === '-') { target = Math.min(2400, target * 1.1); applyZoom(); }
+  if (k === '0') { target = 700; applyZoom(); }
+}
+window.ad.onHotkey(ctrlKey);   // 网页有焦点时由主进程转发过来
+addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') window.ad.hide();
+  if (e.ctrlKey) ctrlKey(e.key.toLowerCase());
+  if (document.activeElement !== u && !e.ctrlKey) {
+    if (e.key === 'ArrowDown') key('Down');
+    if (e.key === 'ArrowUp') key('Up');
+  }
+});
+</script>
+</body></html>
