@@ -1,15 +1,13 @@
 # 🎁 Ad Popup Slacker
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | **한국어**
+[English](README.en.md) | [简体中文](README.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | **한국어**
 
 > 어떤 웹페이지든 "팝업 광고"로 위장합니다. 테두리 없음, 항상 맨 위, 정신없는 광고 투성이 속에 진짜 웹페이지가 몰래 숨어 있습니다. 상사가 지나가면 키 하나로 바로 숨기세요.
 
 [Electron](https://www.electronjs.org/) 기반입니다. 웹페이지는 가짜 "광고 영상 영역"에 들어가고, 그 주위에 빨간 봉투 배너, 상품 카드, 커다란 "지금 받기" 버튼이 놓이며, 그 위에 "광고 AD" 워터마크와 HOT／타임세일 스티커가 겹쳐집니다. 멀리서 보면 아무도 보고 싶지 않은 악성 광고로만 보입니다.
 
-<!-- 여기에 스크린샷을 넣으세요:
-![screenshot](docs/screenshot.png)
--->
-![screenshot](docs/screenshot.png)
+<p align="center"><img src="docs/screenshot.png" width="320" alt="screenshot"></p>
+
 ## ✨ 기능
 
 - **광고로 위장**: 빨강·주황 줄무늬 제목, 떨어지는 빨간 봉투, 깜빡이는 상품 카드, 흔들리는 "지금 받기" 버튼, 가짜 "닫기" 카운트다운. 창 제목은 "한정 특가".
@@ -26,7 +24,7 @@
 
 ### 방법 1: 설치 파일 다운로드
 
-[Releases](../../releases) 페이지에서 사용하는 OS에 맞는 설치 파일(Windows `.exe`, macOS `.dmg`, Linux `.AppImage`)을 받으세요.
+[Releases](https://github.com/ll2310782478/ad-popup-slacker-app/releases) 페이지에서 사용하는 OS에 맞는 설치 파일(Windows `.exe`, macOS `.dmg`, Linux `.AppImage`)을 받으세요.
 
 > 설치 파일은 코드 서명이 되어 있지 않습니다. Windows에서는 SmartScreen 경고가 나올 수 있으니 "추가 정보 → 실행"을 누르세요. macOS에서는 처음 한 번 우클릭 → 열기를 하거나 `xattr -cr "/Applications/Ad Popup Slacker.app"`을 실행하세요.
 
@@ -36,7 +34,7 @@
 
 ```bash
 git clone https://github.com/ll2310782478/ad-popup-slacker-app.git
-cd ad-popup-slacker
+cd ad-popup-slacker-app
 npm install
 npm start
 ```

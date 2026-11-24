@@ -1,15 +1,13 @@
 # 🎁 Ad Popup Slacker
 
-[English](README.md) | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | **日本語** | [한국어](README.ko.md)
+[English](README.en.md) | [简体中文](README.md) | [繁體中文](README.zh-TW.md) | **日本語** | [한국어](README.ko.md)
 
 > どんなWebページも「ポップアップ広告」に偽装します。枠なし・常に最前面・ごちゃごちゃの広告まみれで、本物のページは広告の中にこっそり隠れています。上司が通りかかったら、ワンキーで非表示。
 
 [Electron](https://www.electronjs.org/) 製です。ページは偽の「広告動画エリア」に埋め込まれ、周囲には赤い封筒のバナー、商品カード、大きな「今すぐ受け取る」ボタンが並び、その上に「広告 AD」の透かしと HOT／タイムセールのステッカーが重なります。遠くから見れば、誰も見たくない迷惑広告にしか見えません。
 
-<!-- ここにスクリーンショットを配置：
-![screenshot](docs/screenshot.png)
--->
-![screenshot](docs/screenshot.png)
+<p align="center"><img src="docs/screenshot.png" width="320" alt="screenshot"></p>
+
 ## ✨ 機能
 
 - **広告に擬態**：赤橙のストライプ見出し、舞い落ちる赤い封筒、点滅する商品カード、揺れる「今すぐ受け取る」ボタン、偽の「閉じる」カウントダウン。ウィンドウタイトルは「期間限定特価」。
@@ -26,7 +24,7 @@
 
 ### 方法1：インストーラをダウンロード
 
-[Releases](../../releases) ページから、お使いのOS向けのインストーラ（Windows `.exe`、macOS `.dmg`、Linux `.AppImage`）をダウンロードします。
+[Releases](https://github.com/ll2310782478/ad-popup-slacker-app/releases) ページから、お使いのOS向けのインストーラ（Windows `.exe`、macOS `.dmg`、Linux `.AppImage`）をダウンロードします。
 
 > インストーラにはコード署名がありません。Windows では SmartScreen の警告が出る場合があるので、「詳細情報 → 実行」を選んでください。macOS では初回のみ右クリック → 開く、または `xattr -cr "/Applications/Ad Popup Slacker.app"` を実行してください。
 
@@ -36,7 +34,7 @@
 
 ```bash
 git clone https://github.com/ll2310782478/ad-popup-slacker-app.git
-cd ad-popup-slacker
+cd ad-popup-slacker-app
 npm install
 npm start
 ```

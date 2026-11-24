@@ -1,15 +1,13 @@
 # 🎁 Ad Popup Slacker · 彈窗廣告摸魚神器
 
-[English](README.md) | [简体中文](README.zh-CN.md) | **繁體中文** | [日本語](README.ja.md) | [한국어](README.ko.md)
+[English](README.en.md) | [简体中文](README.md) | **繁體中文** | [日本語](README.ja.md) | [한국어](README.ko.md)
 
 > 把任意網頁偽裝成一個「彈窗廣告」：無邊框、永遠置頂、滿屏牛皮癬，真實網頁悄悄藏在廣告裡。老闆路過，一鍵隱藏。
 
 基於 [Electron](https://www.electronjs.org/) 開發。網頁被嵌在一個「廣告影片區」裡，周圍是紅包橫幅、商品卡片、「立即領取」大按鈕，上面再蓋一層「廣告 AD」浮水印和 HOT／限時秒殺貼紙。遠看就是一個流氓彈窗，沒人會多看一眼。
 
-<!-- 在這裡放一張截圖，例如：
-![screenshot](docs/screenshot.png)
--->
-![screenshot](docs/screenshot.png)
+<p align="center"><img src="docs/screenshot.png" width="320" alt="screenshot"></p>
+
 ## ✨ 功能
 
 - **偽裝成廣告**：紅橙斜紋大標題、飄落紅包、閃爍商品卡、抖動的「立即領取」按鈕、假「關閉」倒數，視窗標題為「限時特惠」。
@@ -26,7 +24,7 @@
 
 ### 方式一：下載安裝包
 
-到 [Releases](../../releases) 頁面下載對應系統的安裝包（Windows `.exe`、macOS `.dmg`、Linux `.AppImage`）。
+到 [Releases](https://github.com/ll2310782478/ad-popup-slacker-app/releases) 頁面下載對應系統的安裝包（Windows `.exe`、macOS `.dmg`、Linux `.AppImage`）。
 
 > 安裝包未做程式碼簽署：Windows 可能出現 SmartScreen 提示，點「更多資訊 → 仍要執行」；macOS 首次開啟請右鍵 → 開啟，或執行 `xattr -cr "/Applications/Ad Popup Slacker.app"`。
 
@@ -36,7 +34,7 @@
 
 ```bash
 git clone https://github.com/ll2310782478/ad-popup-slacker-app.git
-cd ad-popup-slacker
+cd ad-popup-slacker-app
 npm install
 npm start
 ```

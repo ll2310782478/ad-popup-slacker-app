@@ -18,7 +18,7 @@
     "boss-key",
     "popup-ad"
   ],
-  "author": "你的名字",
+  "author": "ll2310782478",
   "build": {
     "appId": "io.github.adpopupslacker",
     "productName": "Ad Popup Slacker",
@@ -55,5 +55,10 @@
       ],
       "category": "Utility"
     }
+  },
+  "homepage": "https://github.com/ll2310782478/ad-popup-slacker-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ll2310782478/ad-popup-slacker-app.git"
   }
 }

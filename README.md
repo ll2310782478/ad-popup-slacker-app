@@ -1,83 +1,81 @@
-# 🎁 Ad Popup Slacker
+# 🎁 Ad Popup Slacker · 弹窗广告摸鱼神器
 
-**English** | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
+[English](README.en.md) | **简体中文** | [繁體中文](README.zh-TW.md) | [日本語](README.ja.md) | [한국어](README.ko.md)
 
-> Disguise any web page as an annoying pop-up ad: frameless, always on top, covered in banner clutter, with the real page quietly hidden inside. When the boss walks by, hide it with one key.
+> 把任意网页伪装成一个"弹窗广告"：无边框、永远置顶、满屏牛皮癣，真实网页悄悄藏在广告里。老板路过，一键隐藏。
 
-Built with [Electron](https://www.electronjs.org/). The page is embedded in a fake "ad video area" surrounded by red-packet banners, product cards and a big "Claim now" button, overlaid with "AD" watermarks and HOT / Flash Sale stickers. From a distance it looks like obnoxious adware nobody wants to look at.
+基于 [Electron](https://www.electronjs.org/) 开发。网页被嵌在一个"广告视频区"里，周围是红包横幅、商品卡片、"立即领取"大按钮，上面再盖一层"广告 AD"水印和 HOT / 限时秒杀贴纸。远看就是一个流氓弹窗，没人会多看一眼。
 
-<!-- Add a screenshot here, e.g.:
-![screenshot](docs/screenshot.png)
--->
-![screenshot](docs/screenshot.png)
-## ✨ Features
+<p align="center"><img src="docs/screenshot.png" width="320" alt="screenshot"></p>
 
-- **Looks like an ad**: striped banner, falling red packets, flashing product cards, a shaking "Claim now" button, a fake close countdown, window title "Limited-time offer".
-- **Frameless + always on top**: no OS title bar or border, top-most window level, hidden from the taskbar, random position on every launch, draggable by the grey top strip.
-- **Global boss key**: press `Alt+Q` in any app to hide / show instantly, with two backup keys in case another program has taken it.
-- **Real page hidden in the ad**: the page sits inside the fake video area under watermarks, stickers and a fake player bar, while clicks and scrolling still pass through to the page.
-- **Auto-fit zoom**: page zoom follows the window width, so resizing the window always keeps a desktop-like layout.
-- **The fake player bar is a real remote**: ▶ play/pause, ‹ previous, "Skip ›" next video, handy for short-video sites.
-- **Autoplay**: the autoplay restriction is lifted, so the next video starts without a click.
-- **App-launch blocking**: custom-protocol jumps such as `bytedance://` are dropped, so no "Get an app to open this link" system dialog.
-- **Desktop / mobile UA toggle** with one key.
+## ✨ 功能
 
-## 🚀 Quick start
+- **伪装成广告**：红橙斜纹大标题、飘落红包、闪烁商品卡、抖动的"立即领取"按钮、假"关闭"倒计时，窗口标题为"限时特惠"。
+- **无边框 + 置顶**：无系统标题栏和边框，使用最高置顶层级，不在任务栏显示，每次启动出现在屏幕随机位置，顶部灰条可拖动。
+- **全局老板键**：任何软件里按 `Alt+Q` 立即隐藏 / 再按显示，另有两个备用键，防止被其他软件占用。
+- **真实网页混在广告里**：网页嵌在伪装的"视频区"，上面盖有水印、贴纸和假播放条，但鼠标点击和滚动照常穿透到网页。
+- **缩放自适应**：网页缩放比例随窗口宽度自动调整，拖大拖小窗口，排版始终像在一个桌面浏览器里。
+- **假播放条是真遥控器**：▶ 暂停/播放，‹ 上一个，"跳过 ›"下一个视频，适合刷短视频。
+- **自动播放**：已放开自动播放限制，切到下一个视频无需手动点击。
+- **拦截唤起 App**：自动丢弃 `bytedance://` 等自定义协议跳转，不会弹出"获取打开此链接的应用"系统对话框。
+- **桌面版 / 手机版 UA 一键切换**。
 
-### Option 1: download an installer
+## 🚀 快速开始
 
-Grab the installer for your OS from the [Releases](../../releases) page (Windows `.exe`, macOS `.dmg`, Linux `.AppImage`).
+### 方式一：下载安装包
 
-> Installers are not code-signed. On Windows, SmartScreen may warn you: click "More info → Run anyway". On macOS, right-click → Open the first time, or run `xattr -cr "/Applications/Ad Popup Slacker.app"`.
+到 [Releases](https://github.com/ll2310782478/ad-popup-slacker-app/releases) 页面下载对应系统的安装包（Windows `.exe`、macOS `.dmg`、Linux `.AppImage`）。
 
-### Option 2: run from source
+> 安装包未做代码签名：Windows 可能出现 SmartScreen 提示，点"更多信息 → 仍要运行"；macOS 首次打开请右键 → 打开，或执行 `xattr -cr "/Applications/Ad Popup Slacker.app"`。
 
-Requires [Node.js](https://nodejs.org/) 18 or later.
+### 方式二：从源码运行
+
+需要 [Node.js](https://nodejs.org/) 18 或更高版本。
 
 ```bash
 git clone https://github.com/ll2310782478/ad-popup-slacker-app.git
-cd ad-popup-slacker
+cd ad-popup-slacker-app
 npm install
 npm start
 ```
 
-Or launch with a URL:
+也可以带上网址直接启动：
 
 ```bash
 npm start -- https://www.douyin.com
 ```
 
-Once the window appears, type a URL (or a search term) into the input box at the bottom, disguised as a "🎁 Coupon code" field, and press Enter.
+窗口出现后，在底部伪装成"🎁 优惠码"的输入框里输入网址（或搜索词），回车加载。
 
-### Build it yourself
+### 自行打包
 
 ```bash
-npm run dist     # output goes to dist/
+npm run dist     # 产物在 dist/ 目录
 ```
 
-Push a `v*` tag and GitHub Actions builds Windows / macOS / Linux packages and publishes a Release:
+推送 `v*` 标签即可由 GitHub Actions 自动构建 Windows / macOS / Linux 三个平台并发布 Release：
 
 ```bash
 git tag v1.0.0 && git push --tags
 ```
 
-## ⌨️ Shortcuts
+## ⌨️ 快捷键
 
-| Shortcut | Action | Scope |
+| 快捷键 | 作用 | 范围 |
 | --- | --- | --- |
-| `Alt+Q` | Hide / show the window (boss key) | Global |
-| `Ctrl+Alt+Q`, `Ctrl+Shift+Z` | Backup boss keys | Global |
-| `Esc` | Hide the window | In window |
-| Click "Close ✕" (after the 5 s countdown) | Hide the window | In window |
-| `↑` / `↓` | Previous / next video | In window |
-| `Ctrl+L` | Focus the URL box | In window |
-| `Ctrl+U` | Toggle desktop / mobile page | In window |
-| `Ctrl+=` / `Ctrl+-` | Zoom page content in / out | In window |
-| `Ctrl+0` | Reset zoom | In window |
+| `Alt+Q` | 隐藏 / 显示窗口（老板键） | 全局 |
+| `Ctrl+Alt+Q`、`Ctrl+Shift+Z` | 备用老板键 | 全局 |
+| `Esc` | 隐藏窗口 | 窗口内 |
+| 点击右上角"关闭 ✕" | 隐藏窗口（倒计时 5 秒后可点） | 窗口内 |
+| `↑` / `↓` | 上一个 / 下一个视频 | 窗口内 |
+| `Ctrl+L` | 聚焦网址输入框 | 窗口内 |
+| `Ctrl+U` | 切换桌面版 / 手机版网页 | 窗口内 |
+| `Ctrl+=` / `Ctrl+-` | 网页内容放大 / 缩小 | 窗口内 |
+| `Ctrl+0` | 恢复默认缩放 | 窗口内 |
 
-### Change the boss key
+### 修改老板键
 
-Set the primary shortcut with the `BOSSKEY` environment variable (see [Electron Accelerator](https://www.electronjs.org/docs/latest/api/accelerator) for the format):
+通过环境变量 `BOSSKEY` 指定主快捷键（格式见 [Electron Accelerator](https://www.electronjs.org/docs/latest/api/accelerator)）：
 
 ```bash
 # macOS / Linux
@@ -87,42 +85,42 @@ BOSSKEY="Control+Shift+X" npm start
 $env:BOSSKEY="Control+Shift+X"; npm start
 ```
 
-The terminal prints which shortcuts were actually registered. If it reports a failure, all candidates are taken by other programs: pick a different combination.
+启动后终端会打印实际注册成功的快捷键。如果显示"注册失败"，说明备用键也被占用了，请换一个组合。
 
-## 🔧 How it works
+## 🔧 工作原理
 
-| File | Description |
+| 文件 | 说明 |
 | --- | --- |
-| `main.js` | Main process: frameless always-on-top window, global shortcuts, custom-protocol blocking, key forwarding from the page |
-| `preload.js` | Exposes `hide()` and a hotkey callback to the UI via `contextBridge` |
-| `index.html` | Ad UI and logic: disguise styling, `<webview>`, auto-fit zoom, fake player bar |
-| `.github/workflows/` | `build.yml` packages and releases on tags, `ci.yml` syntax check |
+| `main.js` | 主进程：创建无边框置顶窗口、注册全局快捷键、拦截自定义协议跳转、转发网页内的按键 |
+| `preload.js` | 通过 `contextBridge` 向界面暴露 `hide()` 和快捷键回调 |
+| `index.html` | 广告界面与逻辑：伪装样式、`<webview>`、缩放自适应、假播放条 |
+| `.github/workflows/` | `build.yml` 打标签自动打包发布，`ci.yml` 语法检查 |
 
-**Auto-fit zoom**: zoom = video-area width ÷ target viewport width (default 700), clamped to 0.25–2 and recomputed on every resize with a `ResizeObserver`. `Ctrl+=` / `Ctrl+-` change the target viewport width.
+**缩放自适应**：缩放比例 = 视频区宽度 ÷ 目标视口宽度（默认 700），限制在 0.25 到 2 之间，用 `ResizeObserver` 监听窗口变化实时重算。`Ctrl+=` / `Ctrl+-` 调整的是目标视口宽度。
 
-## ⚠️ Known limitations
+## ⚠️ 已知限制
 
-- Exclusive-fullscreen games cannot be covered.
-- When a program running as administrator is in the foreground, this app (running unelevated) may not receive global shortcuts. Run your terminal as administrator before `npm start`.
-- On macOS, `Option+Q` may be taken by the system. Use `BOSSKEY` to switch to something like `Control+Shift+Z`.
-- Developed and tested mainly on Windows; macOS / Linux are not thoroughly tested.
-- Some sites may detect or restrict embedded browsers, or require login.
+- 独占全屏的游戏无法被覆盖。
+- 以管理员权限运行的程序在前台时，普通权限的本程序可能收不到全局快捷键，需要用管理员身份运行终端再 `npm start`。
+- macOS 上 `Option+Q` 可能被系统占用，建议用 `BOSSKEY` 换成 `Control+Shift+Z` 之类的组合。
+- 主要在 Windows 上开发和测试，macOS / Linux 未充分测试。
+- 部分网站可能检测并限制内嵌浏览器，或需要登录后才能正常使用。
 
-## 🗺️ Ideas / TODO
+## 🗺️ 想法 / TODO
 
-- [ ] A resize handle disguised as an ad corner badge
-- [ ] Timed auto-advance to the next video (configurable interval)
-- [ ] Customizable ad copy and themes (red packet / game / e-commerce)
-- [ ] Periodically spawn a second fake ad window
+- [ ] 窗口右下角加一个伪装成广告角标的缩放手柄
+- [ ] 定时自动下一个视频（可设间隔）
+- [ ] 可自定义广告文案和主题（红包 / 游戏 / 电商）
+- [ ] 定时弹出第二个假广告窗口
 
-Issues and PRs are welcome.
+欢迎提 Issue 和 PR。
 
-## 📜 Disclaimer
+## 📜 免责声明
 
-This project is for learning and personal entertainment only. Use it in accordance with the rules of your company or school and applicable laws. **It is not recommended for situations that need your attention, such as work, class or exams.** You are solely responsible for any consequences of using this tool.
+本项目仅用于技术学习和个人娱乐。请在遵守所在公司、学校的规章制度和相关法律法规的前提下使用，**不建议在需要专注的工作、课堂、考试等场景中使用**，因使用本工具产生的任何后果由使用者自行承担。
 
-Third-party sites loaded through `<webview>` (such as Douyin) and their content, trademarks and copyrights belong to their respective owners. This project is not affiliated with those sites or their operators. The "red packets" and "coupon codes" in the UI are decorative fakes with no real function.
+项目内通过 `<webview>` 加载的第三方网站（如抖音）其内容、商标及版权归各自所有者所有，本项目与这些网站及其运营方无任何关联。界面中的"红包""优惠码"等均为装饰性假内容，不具有任何实际功能。
 
-## 📄 License
+## 📄 许可证
 
 [MIT](./LICENSE)
